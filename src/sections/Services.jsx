@@ -1,6 +1,15 @@
+import { services } from "../assets/constants"
+import ServiceCard from "../components/ServiceCard"
+
 const Services = () => {
   return (
-    <div>Services</div>
+    <section className="max-container flex justify-center flex-wrap gap-9">
+      {services.map((service) => (
+        <ServiceCard key={service.label}
+        {...service} // to create the service card easily with the passed props
+        ></ServiceCard>
+      ))}
+    </section>
   )
 }
 
